@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üdvözlet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="welcome-container">
+        <h2>Üdvözlet, <span id="userName"></span>!</h2>
+        <p>Üdvözlünk a fiókodban.</p>
+        <a href="https://www.lifehack.org" target="_blank">Kattints ide a legújabb lifehackekhez!</a>
+    </div>
+    <script>
+        // Felhasználónév megjelenítése
+        document.getElementById('userName').textContent = localStorage.getItem('username');
+    </script>
+</body>
+</html>
