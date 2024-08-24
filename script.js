@@ -1,7 +1,7 @@
 // A regisztrált felhasználó adatai (ezt később bővítheted adatbázissal)
 const registeredUser = {
-    username: 'admin',
-    password: 'password123'
+    username: 'DJFerenc',
+    password: 'gamer0061'
 };
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
