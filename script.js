@@ -1,21 +1,20 @@
-// A regisztrált felhasználó adatai (ezt később bővítheted adatbázissal)
-const registeredUser = {
-    username: 'DJFerenc',
-    password: 'gamer0061'
-};
-
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();  // Alapértelmezett űrlap beküldés leállítása
+    event.preventDefault(); // Megakadályozza az alapértelmezett form elküldést
 
+    // Minta felhasználónév és jelszó
+    const correctUsername = 'DJFerenc';
+    const correctPassword = 'gamer0061';
+
+    // Beírt felhasználónév és jelszó lekérése
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Felhasználói adatok ellenőrzése
-    if (username === registeredUser.username && password === registeredUser.password) {
-        // Adatok tárolása a localStorage-ban, hogy hozzáférjünk a welcome.html oldalon is
-        localStorage.setItem('username', username);
-        window.location.href = 'welcome.html';  // Továbbirányítás az üdvözlő oldalra
+    // Ellenőrzés
+    if (username === correctUsername && password === correctPassword) {
+        alert('Sikeres bejelentkezés!');
+        // Itt irányíthatod a felhasználót egy másik oldalra
+        window.location.href = 'welcome.html'; // Például egy üdvözlő oldalra
     } else {
-        document.getElementById('errorMessage').textContent = 'Helytelen felhasználónév vagy jelszó!';
+        document.getElementById('error-message').textContent = 'Hibás felhasználónév vagy jelszó!';
     }
 });
