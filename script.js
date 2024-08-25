@@ -3,7 +3,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
     // Minta felhasználónév és jelszó
     const correctUsername = 'DJFerenc';
-    const correctPassword = 'gamer0061';
+    const correctPassword = 'gamer006';
 
     // Beírt felhasználónév és jelszó lekérése
     const username = document.getElementById('username').value;
