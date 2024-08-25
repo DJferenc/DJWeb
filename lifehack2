@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svájc 22:00 .</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content-container">
+        <h2>Svájc 22:00 </h2>
+        <p>Tutad hogy Svájcban 22:00 után nem lehet lehúzni a WC-t 
+           a kormány azal indokolja a szabályt hogy az emberek nyugottan alhassanak.<p>
+        <!-- Lifehack tartalom -->
+    </div>
+</body>
+</html>
