@@ -1,20 +1,29 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Megakadályozza az alapértelmezett form elküldést
+// Előre beállított felhasználónév és jelszó
+const predefinedUsername = 'DJFerenc';
+const predefinedPassword = 'Retro2';
 
-    // Minta felhasználónév és jelszó
-    const correctUsername = 'DJFerenc';
-    const correctPassword = 'Retro2';
+// Tároljuk a felhasználónevet és jelszót a localStorage-ban, ha még nincs tárolva
+if (!localStorage.getItem(predefinedUsername)) {
+    localStorage.setItem(predefinedUsername, predefinedPassword);
+}
 
-    // Beírt felhasználónév és jelszó lekérése
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+// Bejelentkezési logika
+const loginForm = document.getElementById('loginForm');
+if (loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-    // Ellenőrzés
-    if (username === correctUsername && password === correctPassword) {
-        alert('Sikeres bejelentkezés!');
-        // Itt irányíthatod a felhasználót egy másik oldalra
-        window.location.href = 'welcome.html'; // Például egy üdvözlő oldalra
-    } else {
-        document.getElementById('error-message').textContent = 'Hibás felhasználónév vagy jelszó!';
-    }
-});
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Ellenőrzés, hogy a felhasználónév és jelszó helyes-e
+        const storedPassword = localStorage.getItem(username);
+        if (storedPassword && storedPassword === password) {
+            alert('Sikeres bejelentkezés!');
+            localStorage.setItem('username', username); // Aktuális felhasználó tárolása
+            window.location.href = 'welcome.html'; // Átirányítás a welcome oldalra
+        } else {
+            alert('Helytelen felhasználónév vagy jelszó!');
+        }
+    });
+}
