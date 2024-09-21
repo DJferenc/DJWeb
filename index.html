@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bejelentkezés</title>
+    <title>Bejelentkezés / Regisztráció</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="login-container">
         <h2>Bejelentkezés</h2>
-        <form id="loginForm">
-            <label for="username">Felhasználónév:</label>
-            <input type="text" id="username" required>
-            <br>
-            <label for="password">Jelszó:</label>
-            <input type="password" id="password" required>
-            <br>
+        <form id="loginForm" onsubmit="login(event)">
+            <input type="text" id="username" placeholder="Felhasználónév" required>
+            <input type="password" id="password" placeholder="Jelszó" required>
             <button type="submit">Bejelentkezés</button>
         </form>
-        <p>Nincs fiókod? <a href="register.html">Regisztrálj itt</a></p>
+        
+        <h2>Regisztráció</h2>
+        <form id="registerForm" onsubmit="register(event)">
+            <input type="text" id="newUsername" placeholder="Új felhasználónév" required>
+            <input type="password" id="newPassword" placeholder="Új jelszó" required>
+            <button type="submit">Regisztrálás</button>
+        </form>
+        
+        <p id="message"></p>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
