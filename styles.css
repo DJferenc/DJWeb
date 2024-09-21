@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
     line-height: 1.6;
 }
 
@@ -15,20 +15,16 @@ body {
     max-width: 400px;
     margin: 100px auto;
     padding: 40px;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.login-container:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #007bff;
+    color: #333;
 }
 
 input[type="text"],
@@ -44,14 +40,14 @@ input[type="password"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-    border-color: #007bff;
+    border-color: #2575fc;
     outline: none;
 }
 
 button {
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background-color: #2575fc;
     color: white;
     border: none;
     border-radius: 5px;
@@ -61,7 +57,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #1d5bb8;
 }
 
 p {
