@@ -8,23 +8,26 @@
 </head>
 <body>
     <div class="welcome-container">
+        <!-- Üdvözlés a felhasználónak -->
         <h2>Üdvözlet, <span id="userName"></span>!</h2>
-        <p>Üdvözlünk a fiókodban. Kattints az alábbi lifehackekre!</p>
-        
-              class="grid-container">
-            <div class="grid-item" onclick="location.href='lifehack1.html'">Mamut Feltámasztás</div>
-            <div class="grid-item" onclick="location.href='lifehack2.html'">Svájc 22:00 </div>
-            <div class="grid-item" onclick="location.href='lifehack3.html'">Banán Genetika</div>
-            <div class="grid-item" onclick="location.href='lifehack4.html'">Legmagasabb Fa</div>
-            <div class="grid-item" onclick="location.href='lifehack5.html'">Leghosszabb település név</div>
-            <div class="grid-item" onclick="location.href='lifehack6.html'">A Tisza Virág</div>
+        <p>Válassz egy kategóriát az alábbiak közül:</p>
+
+        <!-- Kategóriák konténere -->
+        <div class="category-container">
+            <!-- Színezők kategória -->
+            <div class="category-item" onclick="window.location.href='szinezok.html'">
+                <h3>Színezők</h3>
+                <p>Fedezd fel a legjobb színezőket!</p>
+            </div>
+
+            <!-- Lifehackok kategória -->
+            <div class="category-item" onclick="window.location.href='lifehackok.html'">
+                <h3>Lifehackok</h3>
+                <p>Praktikus életvezetési tippek és trükkök.</p>
+            </div>
         </div>
     </div>
-    
-    <script>
-        // A felhasználó nevének megjelenítése
-        document.getElementById('userName').textContent = localStorage.getItem('username');
-    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
