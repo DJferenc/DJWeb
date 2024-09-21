@@ -1,55 +1,51 @@
-// Regisztrációs logika
+// Adminisztrátori felhasználó adatok (fix felhasználónév és jelszó)
+const adminUser = {
+    username: "DJFerenc",
+    password: "Retro2"
+};
+
+// Bejelentkezési logika
+function login(event) {
+    event.preventDefault(); // Megakadályozza az űrlap alapértelmezett elküldését
+
+    // Beviteli mezők értékeinek lekérése
+    const usernameInput = document.getElementById('username').value;
+    const passwordInput = document.getElementById('password').value;
+
+    // Ellenőrizzük, hogy a felhasználónév és jelszó helyes-e
+    if (usernameInput === adminUser.username && passwordInput === adminUser.password) {
+        // Felhasználónév tárolása LocalStorage-ban
+        localStorage.setItem('username', usernameInput);
+
+        // Átirányítás a welcome.html oldalra
+        window.location.href = 'welcome.html';
+    } else {
+        // Hibaüzenet, ha a bejelentkezési adatok helytelenek
+        alert('Helytelen felhasználónév vagy jelszó!');
+    }
+}
+
+// Felhasználónév megjelenítése a welcome oldalon
 document.addEventListener('DOMContentLoaded', function() {
-    const registerForm = document.getElementById('registerForm');
-    if (registerForm) {
-        registerForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Az oldal újratöltésének megakadályozása
+    const userNameElement = document.getElementById('userName'); // Az elem, ahol a felhasználónév megjelenik
 
-            const username = document.getElementById('newUsername').value.trim();
-            const password = document.getElementById('newPassword').value.trim();
+    // Felhasználónév lekérése a LocalStorage-ból
+    const username = localStorage.getItem('username');
 
-            // Ellenőrizzük, hogy a felhasználónév már létezik-e
-            if (localStorage.getItem(username)) {
-                alert('Ez a felhasználónév már létezik!');
-            } else {
-                // Felhasználónév és jelszó tárolása a localStorage-ban
-                localStorage.setItem(username, password);
-                alert('Sikeres regisztráció! Most már bejelentkezhetsz.');
-                window.location.href = 'index.html'; // Átirányítás a bejelentkezési oldalra
-            }
-        });
-    }
-
-    // Bejelentkezési logika
-    const loginForm = document.getElementById('loginForm');
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Az oldal újratöltésének megakadályozása
-
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value.trim();
-
-            // Ellenőrizzük a felhasználónév és jelszó helyességét
-            const storedPassword = localStorage.getItem(username);
-            if (storedPassword && storedPassword === password) {
-                alert('Sikeres bejelentkezés!');
-                localStorage.setItem('username', username); // Aktuális felhasználó tárolása
-                window.location.href = 'welcome.html'; // Átirányítás a welcome oldalra
-            } else {
-                alert('Helytelen felhasználónév vagy jelszó!');
-            }
-        });
-    }
-
-    // Welcome oldal logika
-    const userNameElement = document.getElementById('userName');
-    if (userNameElement) {
-        const username = localStorage.getItem('username');
-        if (username) {
-            userNameElement.textContent = username;
-        } else {
-            // Ha nincs bejelentkezett felhasználó, irányítsuk át a bejelentkezési oldalra
-            window.location.href = 'index.html';
-        }
+    if (username) {
+        // Ha a felhasználó be van jelentkezve, megjelenítjük a nevét
+        userNameElement.textContent = username;
+    } else {
+        // Ha nincs bejelentkezve, visszairányítjuk a bejelentkezési oldalra
+        window.location.href = 'index.html';
     }
 });
+
+// Kijelentkezési funkció
+function logout() {
+    // Felhasználónév eltávolítása a LocalStorage-ból
+    localStorage.removeItem('username');
+
+    // Átirányítás a bejelentkezési oldalra
+    window.location.href = 'index.html';
+}
