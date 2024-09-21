@@ -1,3 +1,4 @@
+<!-- welcome.html -->
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -8,26 +9,20 @@
 </head>
 <body>
     <div class="welcome-container">
-        <!-- Üdvözlés a felhasználónak -->
         <h2>Üdvözlet, <span id="userName"></span>!</h2>
-        <p>Válassz egy kategóriát az alábbiak közül:</p>
-
-        <!-- Kategóriák konténere -->
-        <div class="category-container">
-            <!-- Színezők kategória -->
-            <div class="category-item" onclick="window.location.href='szinezok.html'">
-                <h3>Színezők</h3>
-                <p>Fedezd fel a legjobb színezőket!</p>
-            </div>
-
-            <!-- Lifehackok kategória -->
-            <div class="category-item" onclick="window.location.href='lifehackok.html'">
-                <h3>Lifehackok</h3>
-                <p>Praktikus életvezetési tippek és trükkök.</p>
-            </div>
+        <p>Üdvözlünk a fiókodban. Kattints az alábbi érdekeségekre!</p>
+        <div class="grid-container">
+            <div class="grid-item" onclick="window.location.href='lifehack1.html'"> Érdekességek 1</div>
+            <div class="grid-item" onclick="window.location.href='lifehack2.html'"> Érdekességek 2</div>
+            <div class="grid-item" onclick="window.location.href='lifehack3.html'"> Érdekességek 3</div>
+            <div class="grid-item" onclick="window.locarion.href='lifehack4.html'"> Érdekességek 4</div>
+            <div class="grid-item" onclick="window.locarion.href='lifehack5.html'"> Érdekességek 5</div>
+            <div class="grid-item" onclick="window.locarion.href='lifehack6.html'"> Érdekességek 6</div>
+        
         </div>
     </div>
-
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('userName').textContent = localStorage.getItem('username');
+    </script>
 </body>
 </html>
