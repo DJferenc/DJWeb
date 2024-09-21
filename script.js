@@ -1,4 +1,4 @@
-// Adminisztrátori felhasználó adatok (fix felhasználónév és jelszó)
+// Adminisztrátori felhasználó adatok
 const adminUser = {
     username: "DJFerenc",
     password: "Retro2"
@@ -6,46 +6,50 @@ const adminUser = {
 
 // Bejelentkezési logika
 function login(event) {
-    event.preventDefault(); // Megakadályozza az űrlap alapértelmezett elküldését
+    event.preventDefault();
 
-    // Beviteli mezők értékeinek lekérése
     const usernameInput = document.getElementById('username').value;
     const passwordInput = document.getElementById('password').value;
 
-    // Ellenőrizzük, hogy a felhasználónév és jelszó helyes-e
     if (usernameInput === adminUser.username && passwordInput === adminUser.password) {
-        // Felhasználónév tárolása LocalStorage-ban
         localStorage.setItem('username', usernameInput);
-
-        // Átirányítás a welcome.html oldalra
         window.location.href = 'welcome.html';
     } else {
-        // Hibaüzenet, ha a bejelentkezési adatok helytelenek
         alert('Helytelen felhasználónév vagy jelszó!');
+    }
+}
+
+// Regisztrációs logika
+function register(event) {
+    event.preventDefault();
+
+    const newUsername = document.getElementById('newUsername').value;
+    const newPassword = document.getElementById('newPassword').value;
+
+    // Ellenőrizd, hogy a felhasználónév már létezik-e
+    if (localStorage.getItem(newUsername)) {
+        document.getElementById('message').textContent = 'A felhasználónév már foglalt!';
+    } else {
+        // Új felhasználónév és jelszó mentése a LocalStorage-ba
+        localStorage.setItem(newUsername, newPassword);
+        document.getElementById('message').textContent = 'Sikeres regisztráció!';
     }
 }
 
 // Felhasználónév megjelenítése a welcome oldalon
 document.addEventListener('DOMContentLoaded', function() {
-    const userNameElement = document.getElementById('userName'); // Az elem, ahol a felhasználónév megjelenik
+    const userNameElement = document.getElementById('userName');
 
-    // Felhasználónév lekérése a LocalStorage-ból
     const username = localStorage.getItem('username');
-
     if (username) {
-        // Ha a felhasználó be van jelentkezve, megjelenítjük a nevét
         userNameElement.textContent = username;
     } else {
-        // Ha nincs bejelentkezve, visszairányítjuk a bejelentkezési oldalra
         window.location.href = 'index.html';
     }
 });
 
-// Kijelentkezési funkció
+// Kijelentkezés
 function logout() {
-    // Felhasználónév eltávolítása a LocalStorage-ból
     localStorage.removeItem('username');
-
-    // Átirányítás a bejelentkezési oldalra
     window.location.href = 'index.html';
 }
