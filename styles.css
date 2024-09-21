@@ -5,34 +5,36 @@
 }
 
 body {
-    font-family: 'Verdana', sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40;
-    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.5;
 }
 
 .login-container {
-    max-width: 450px;
+    max-width: 400px;
     margin: 100px auto;
-    padding: 40px;
+    padding: 30px;
     background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 30px;
-    color: #007bff;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #4a4a4a;
 }
 
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 15px;
+    padding: 14px;
     margin: 10px 0;
     border: 2px solid #ced4da;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
     transition: border-color 0.3s;
 }
@@ -45,11 +47,11 @@ input[type="password"]:focus {
 
 button {
     width: 100%;
-    padding: 15px;
+    padding: 14px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s, transform 0.2s;
@@ -62,16 +64,11 @@ button:hover {
 
 p {
     text-align: center;
-    color: #6c757d;
+    color: #666;
     margin-top: 20px;
 }
 
 .message {
-    text-align: center;
-    color: green;
-    margin-top: 10px;
-}
-
     text-align: center;
     color: green;
     margin-top: 10px;
