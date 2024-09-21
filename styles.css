@@ -14,12 +14,14 @@ body {
     height: 100vh;
 }
 
-.login-container {
+.login-container, .registration-container {
     background: rgba(255, 255, 255, 0.1);
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     text-align: center;
+    max-width: 400px;
+    width: 100%;
 }
 
 h2 {
@@ -43,7 +45,6 @@ button {
     color: #fff;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 button:hover {
@@ -52,30 +53,10 @@ button:hover {
 
 p {
     margin-top: 15px;
+    color: #bdc3c7;
 }
 
-#welcome-container {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.lifehack-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.lifehack {
-    background-color: #2196F3; /* Kék szín a lifehack rubrikához */
-    color: white;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
-    text-align: center;
+span {
     cursor: pointer;
-}
-
-.lifehack:hover {
-    background-color: #1976D2;
+    color: #f39c12;
 }
