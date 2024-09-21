@@ -1,4 +1,4 @@
-document.getElementById('register-link').addEventListener('click', function() {
+ddocument.getElementById('register-link').addEventListener('click', function() {
     document.querySelector('.login-container').style.display = 'none';
     document.querySelector('.registration-container').style.display = 'block';
 });
