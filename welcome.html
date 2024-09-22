@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Welcome</title>
+    <title>Üdvözöllek</title>
 </head>
 <body>
     <div class="welcome-container">
-        <h1>Üdvözöljük!</h1>
-        <div id="lifehack-container">
-            <div class="lifehack1">Érdekesség 1</div>
-            <div class="lifehac2k">Érdekesség 2</div>
-            <div class="lifehack3">Érdekesség 3</div>
-            <div class="lifehack4">Érdekesség 4</div>
-            <div class="lifehack5">Érdekesség 5</div>
-            <div class="lifehack6">Érdekesség 6</div>
+        <h2>Üdvözlünk az oldalon, DJFerenc!</h2>
+        <p>Itt találod a legújabb Lifehackokat és Színezőket!</p>
+
+        <div class="lifehack-box">
+            <p>Kattints ide az első Lifehack megtekintéséhez!</p>
+            <button onclick="openLifehack()">Megnyitás</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function openLifehack() {
+            window.location.href = "lifehack.html"; // Például átirányít egy lifehack oldalra
+        }
+    </script>
 </body>
 </html>
-
-        document.getElementById('userName').textContent = localStorage.getItem('username');
+('username');
     </script>
 </body>
 </html>
