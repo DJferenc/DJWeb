@@ -25,7 +25,7 @@
         h2 {
             color: black; /* Fekete szöveg a címsornak */
         }
-        input[type="text"], input[type="email"], input[type="password"] {
+        input[type="text"], input[type="password"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -56,7 +56,6 @@
         <h2>Regisztráció</h2>
         <form id="registerForm">
             <input type="text" id="username" placeholder="Felhasználónév" required><br>
-            <input type="email" id="email" placeholder="E-mail" required><br>
             <input type="password" id="password" placeholder="Jelszó" required><br>
             <input type="submit" value="Regisztráció">
         </form>
@@ -68,32 +67,18 @@
         document.getElementById('registerForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Ne töltse újra az oldalt
             var username = document.getElementById('username').value;
-            var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
             var message = document.getElementById('message');
 
-            // Küldjük a regisztrációs adatokat a szerverre
-            fetch('http://localhost:3000/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ username: username, email: email, password: password })
-            })
-            .then(response => {
-                if (!response.ok) throw new Error('Hiba történt');
-                return response.text();
-            })
-            .then(data => {
-                message.textContent = data; // Sikeres üzenet
+            // Egyszerű ellenőrzés (csak teszt célokra)
+            if (username && password) {
+                message.textContent = 'Sikeres regisztráció!';
                 message.style.color = 'green';
-            })
-            .catch(error => {
-                message.textContent = 'Hiba történt: ' + error.message; // Hibaüzenet
+            } else {
+                message.textContent = 'Kérlek, töltsd ki az összes mezőt.';
                 message.style.color = 'red';
-            });
+            }
         });
     </script>
 </body>
 </html>
-
