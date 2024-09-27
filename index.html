@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
@@ -30,7 +29,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        input[type="submit"], button {
+        input[type="submit"] {
             background-color: #28a745;
             color: white;
             padding: 10px;
@@ -40,11 +39,22 @@
             width: 100%;
             margin-top: 10px;
         }
-        input[type="submit"]:hover, button:hover {
+        input[type="submit"]:hover {
             background-color: #218838;
         }
         #message {
             margin-top: 15px;
+        }
+        .register-link {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .register-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -56,8 +66,10 @@
             <input type="password" id="password" placeholder="Jelszó" required><br>
             <input type="submit" value="Bejelentkezés">
         </form>
-        <button id="registerButton">Regisztráció</button>
         <p id="message"></p>
+        <div class="register-link">
+            <p>Még nincs fiókod? <a id="registerButton">Regisztrálj itt!</a></p>
+        </div>
     </div>
 
     <script>
