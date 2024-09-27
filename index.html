@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(to bottom, #4caf50, #a5d6a7); /* Zöld színátmenet */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,9 +18,12 @@
             background-color: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             width: 300px;
             text-align: center;
+        }
+        h2 {
+            color: black; /* Fekete szöveg a címsornak */
         }
         input[type="text"], input[type="password"] {
             width: 100%;
@@ -44,6 +47,7 @@
         }
         #message {
             margin-top: 15px;
+            color: black; /* Fekete szöveg a hibaüzenetekhez */
         }
         .register-link {
             margin-top: 10px;
@@ -68,7 +72,7 @@
         </form>
         <p id="message"></p>
         <div class="register-link">
-            <p>Még nincs fiókod? <a href="register.html" id="registerButton">Regisztrálj itt!</a></p>
+            <p>Még nincs fiókod? <a href="register.html">Regisztrálj itt!</a></p>
         </div>
     </div>
 
@@ -92,3 +96,4 @@
     </script>
 </body>
 </html>
+
