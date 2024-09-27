@@ -1,21 +1,87 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Regisztráció</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #4caf50, #a5d6a7); /* Zöld színátmenet */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .register-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+        h2 {
+            color: black; /* Fekete szöveg a címsornak */
+        }
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        #message {
+            margin-top: 15px;
+            color: black; /* Fekete szöveg a hibaüzenetekhez */
+        }
+    </style>
 </head>
 <body>
-    <div class="login-container">
+    <div class="register-box">
         <h2>Regisztráció</h2>
-        <input type="text" id="new-username" placeholder="Új felhasználónév">
-        <input type="password" id="new-password" placeholder="Új jelszó">
-        <button id="register-btn">Regisztráció</button>
-        <p>Már van fiókod? <a href="index.html">Bejelentkezés itt!</a></p>
-        <div id="register-message" class="message"></div>
+        <form id="registerForm">
+            <input type="text" id="username" placeholder="Felhasználónév" required><br>
+            <input type="email" id="email" placeholder="E-mail" required><br>
+            <input type="password" id="password" placeholder="Jelszó" required><br>
+            <input type="submit" value="Regisztráció">
+        </form>
+        <p id="message"></p>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Az űrlap beküldésének kezelése
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Ne töltse újra az oldalt
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var message = document.getElementById('message');
+
+            // Egyszerű ellenőrzés (csak teszt célokra, ne használd élesben)
+            if (username && email && password) {
+                message.textContent = 'Sikeres regisztráció!';
+                message.style.color = 'green';
+            } else {
+                message.textContent = 'Kérlek, töltsd ki az összes mezőt.';
+                message.style.color = 'red';
+            }
+        });
+    </script>
 </body>
 </html>
