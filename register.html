@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +25,7 @@
         h2 {
             color: black; /* Fekete szöveg a címsornak */
         }
-        input[type="text"], input[type="password"], input[type="email"] {
+        input[type="text"], input[type="email"], input[type="password"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -73,15 +72,28 @@
             var password = document.getElementById('password').value;
             var message = document.getElementById('message');
 
-            // Egyszerű ellenőrzés (csak teszt célokra, ne használd élesben)
-            if (username && email && password) {
-                message.textContent = 'Sikeres regisztráció!';
+            // Küldjük a regisztrációs adatokat a szerverre
+            fetch('http://localhost:3000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: username, email: email, password: password })
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Hiba történt');
+                return response.text();
+            })
+            .then(data => {
+                message.textContent = data; // Sikeres üzenet
                 message.style.color = 'green';
-            } else {
-                message.textContent = 'Kérlek, töltsd ki az összes mezőt.';
+            })
+            .catch(error => {
+                message.textContent = 'Hiba történt: ' + error.message; // Hibaüzenet
                 message.style.color = 'red';
-            }
+            });
         });
     </script>
 </body>
 </html>
+
