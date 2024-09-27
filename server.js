@@ -25,7 +25,7 @@ app.post('/register', (req, res) => {
         from: 'your_email@gmail.com',
         to: email,
         subject: 'Sikeres Regisztráció',
-        text: `Kedves ${username},\n\nSikeresen regisztráltál az alkalmazásba!`,
+        text: `Kedves ${username},\n\nSikeresen regisztráltál a DJ Webre!`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
