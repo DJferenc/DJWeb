@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regisztráció</title>
+    <title>Regisztráció - DJ Ferenc</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #4caf50, #a5d6a7); /* Zöld színátmenet */
+            background: linear-gradient(to bottom, #4caf50, #81c784); /* Zöld színátmenet */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,84 +16,53 @@
         }
         .register-box {
             background-color: white;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 30px;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            width: 300px;
             text-align: center;
+            width: 300px; /* Szélesség */
         }
-        h2 {
-            color: black; /* Fekete szöveg a címsornak */
+        h1 {
+            color: #333;
+            margin-bottom: 20px; /* Néhány extra hely a címsor alatt */
         }
-        input[type="text"], input[type="password"] {
+        input[type="text"], input[type="password"], input[type="email"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
         }
-        input[type="submit"] {
-            background-color: #28a745;
+        button {
+            background-color: #4caf50;
             color: white;
-            padding: 10px;
             border: none;
-            border-radius: 4px;
+            padding: 10px;
+            border-radius: 5px;
             cursor: pointer;
             width: 100%;
-            margin-top: 10px;
         }
-        input[type="submit"]:hover {
-            background-color: #218838;
-        }
-        #message {
-            margin-top: 15px;
-            color: black; /* Fekete szöveg a hibaüzenetekhez */
+        button:hover {
+            background-color: #45a049; /* Sötétebb zöld a hover állapotban */
         }
         .login-link {
             margin-top: 15px;
-            font-size: 14px;
-            color: black;
-        }
-        .login-link a {
-            color: #28a745;
-            text-decoration: none;
-        }
-        .login-link a:hover {
-            text-decoration: underline;
+            display: block;
+            color: #4caf50;
+            text-decoration: none; /* Nincs aláhúzás */
         }
     </style>
 </head>
 <body>
     <div class="register-box">
-        <h2>Regisztráció</h2>
-        <form id="registerForm">
-            <input type="text" id="username" placeholder="Felhasználónév" required><br>
-            <input type="password" id="password" placeholder="Jelszó" required><br>
-            <input type="submit" value="Regisztráció">
+        <h1>Regisztráció</h1>
+        <form action="register_process.php" method="post"> <!-- Cseréld le a megfelelő feldolgozó oldalra -->
+            <input type="text" name="username" placeholder="Felhasználónév" required>
+            <input type="email" name="email" placeholder="Email cím" required>
+            <input type="password" name="password" placeholder="Jelszó" required>
+            <button type="submit">Regisztrálj</button>
         </form>
-        <p id="message"></p>
-        <div class="login-link">
-            <p>Már van fiókod? <a href="index.html">Jelentkezz be!</a></p>
-        </div>
+        <a href="index.html" class="login-link">Már van fiókod? Jelentkezz be itt!</a> <!-- Bejelentkezési link -->
     </div>
-
-    <script>
-        // Az űrlap beküldésének kezelése
-        document.getElementById('registerForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Ne töltse újra az oldalt
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            var message = document.getElementById('message');
-
-            // Egyszerű ellenőrzés (csak teszt célokra)
-            if (username && password) {
-                message.textContent = 'Sikeres regisztráció!';
-                message.style.color = 'green';
-            } else {
-                message.textContent = 'Kérlek, töltsd ki az összes mezőt.';
-                message.style.color = 'red';
-            }
-        });
-    </script>
 </body>
 </html>
