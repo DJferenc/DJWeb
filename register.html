@@ -49,6 +49,18 @@
             margin-top: 15px;
             color: black; /* Fekete szöveg a hibaüzenetekhez */
         }
+        .login-link {
+            margin-top: 15px;
+            font-size: 14px;
+            color: black;
+        }
+        .login-link a {
+            color: #28a745;
+            text-decoration: none;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -60,6 +72,9 @@
             <input type="submit" value="Regisztráció">
         </form>
         <p id="message"></p>
+        <div class="login-link">
+            <p>Már van fiókod? <a href="login.html">Jelentkezz be!</a></p>
+        </div>
     </div>
 
     <script>
